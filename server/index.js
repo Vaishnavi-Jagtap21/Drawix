@@ -7,9 +7,14 @@ import generatePrompt from "./utils/promptGenartor.js";
 import getCodeHelp from "./codeHelperAi/codeHelper.js";
 config()
 
-app.use(cors({
-      origin : ["http://localhost:5173/"]
-}))
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));

@@ -5,6 +5,7 @@ import { StoreProvider } from './store/Store'
 
 //import views here
 import Home from './view/Home'
+const DrawixEditor = lazy(()=>import("./view/DrawixEditor"))
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
        <BrowserRouter>
          <Routes>
             <Route path='/' element={<Home/>}/>
+            <Route path='/debug' element={<DrawixEditor/>}/>
          </Routes>
       </BrowserRouter>
     </StoreProvider>
