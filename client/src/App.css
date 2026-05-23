@@ -1,0 +1,17 @@
+@font-face {
+  font-family: defaultfont;
+  src: url("./assets/fonts/inter.ttf");
+}
+
+@font-face {
+  font-family: mainNew;
+  src: url('./assets/fonts/neofolia.otf');
+}
+
+*{
+  font-family: defaultfont;
+}
+
+.new{
+  font-family:mainNew ;
+}
