@@ -1,7 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 const Home = () => {
+   const navigator = useNavigate()
+
+   const handelNavigation= async()=>{
+     if (document.documentElement.requestFullscreen) {
+      await document.documentElement.requestFullscreen();
+    }
+     navigator("/debug")
+   }
+
   return (
     <div className="bg-black text-white min-h-screen overflow-hidden">
 
@@ -48,7 +58,7 @@ const Home = () => {
           {/* Hero Text */}
           <h1 className="new text-[90px] md:text-[220px] 
           font-black tracking-tight leading-none 
-          text-white/[0.06]">
+          text-white/40">
 
             DRAWIX
 
@@ -63,7 +73,7 @@ const Home = () => {
 
           </p>
 
-          {/* Search Box */}
+          {/* Search Box
           <div className="mt-10 w-full max-w-3xl mx-auto
           p-[1px] rounded-2xl
           bg-gradient-to-r from-yellow-200/30 via-transparent to-yellow-300/30
@@ -95,7 +105,7 @@ const Home = () => {
 
               </button>
             </div>
-          </div>
+          </div> */}
 
           {/* Bottom Text */}
           <div className="mt-10 text-gray-500 text-sm">
@@ -105,14 +115,14 @@ const Home = () => {
           {/* Buttons */}
           <div className="flex items-center justify-center gap-4 mt-6 flex-wrap">
 
-            <button className="px-7 py-3 rounded-full 
+            <button onClick={()=>handelNavigation()} className="px-7 py-3 rounded-full 
             bg-gradient-to-r from-yellow-200 to-yellow-400 
             text-black font-medium tracking-wide
             hover:scale-105 
             transition-all duration-300 
             shadow-lg shadow-yellow-300/20">
 
-              Build With Drawix
+              Debug With Drawix
 
             </button>
 
